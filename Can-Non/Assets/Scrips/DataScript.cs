@@ -12,6 +12,8 @@ public class DataScript : MonoBehaviour
     public Text degreesText;
     public Text powerText;
     public Text resultText;
+    public Text continueText;    
+
     public void SubtractLives()
     {
         livesNum = livesNum - 1;
@@ -29,10 +31,9 @@ public class DataScript : MonoBehaviour
     {
         powerText.text = "Power: " + power.ToString();
     }
-    public void UpdateResult(string result)
+    public void UpdateResult(string result, string instruct)
     {
         resultText.text = result;
+        continueText.text = "\t\t\t\t" + instruct;
     }
-
-
 }

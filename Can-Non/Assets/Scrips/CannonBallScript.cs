@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CannonBallScript : MonoBehaviour
 {
 
-    public float MaxAlive = 5;
-    public float AliveTime = 0;
+    public float MaxAlive = 5f;
+    public float AliveTime = 0f;
     public DataScript TheData;
     public Rigidbody2D cannonBallBody;
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class CannonBallScript : MonoBehaviour
             Destroy(gameObject);
             if(TheData.livesNum < 1 && TheData.ifWin == false)
             {
-                TheData.UpdateResult("You LOSE!");
+                TheData.UpdateResult("You LOSE!","press 'Enter' to restart...");
             }
         }
         
@@ -41,7 +42,8 @@ public class CannonBallScript : MonoBehaviour
             Debug.Log("Collision with target");
             TheData.ifPlay = false;
             TheData.ifWin = true;
-            TheData.UpdateResult("You WIN!");
+            TheData.UpdateResult("You WIN!", "press 'Enter' to continue...");
+            
         }
         cannonBallBody.velocity = Vector2.zero;
         cannonBallBody.angularVelocity = 0f;
