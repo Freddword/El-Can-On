@@ -142,7 +142,7 @@ public class CannonScript : MonoBehaviour
             }
             else    
             {
-                SceneManager.LoadScene("LevelMain");
+                SceneManager.LoadScene("title screen");
             }
         }
     }
